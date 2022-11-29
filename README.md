@@ -1,2 +1,14 @@
-# Credit_Risk_Analysis
-Environment config can be found in environment.yml
+# Credit Risk Analysis
+#### Scott Saenz
+
+## Overview
+## Results
+### Ensemble Learners
+#### Balanced Random Forest Classifier
+#### Easy Ensemble AdaBoost Classifier
+### Resampling
+#### Naive Random Oversampling
+#### SMOTE Oversampling
+#### Undersampling
+#### Combination Over/Under Sampling 
+## Summary
