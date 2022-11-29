@@ -13,9 +13,9 @@ Confusion Matrix
 A confusion matrix can be visuallized using the following code
 ```python
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-cm = confusion_matrix(y_test, y_pred, labels = eec.classes_)
+cm = confusion_matrix(y_test, y_pred, labels = model.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm,
-                               display_labels=eec.classes_)
+                               display_labels=model.classes_)
 disp.plot()
 ```
 
@@ -54,7 +54,67 @@ Classification Report Imbalanced
 
 ### Resampling
 #### Naive Random Oversampling
+Accuracy 65.1%
+
+![Naive Random](NaiveRandomCM.png)
+
+Classification Report Imbalanced
+
+| |pre |      rec |      spe |        f1 |      geo |      iba |      sup |
+|---|---|---------|----------|-----------|----------|----------|----------|
+|  high_risk |      0.01 |     0.70 |     0.60 |     0.02 |     0.65 |     0.43 |      101
+|   low_risk |      1.00 |     0.60   |   0.70 |     0.75  |    0.65 |     0.42 |    17104
+|
+|avg / total |      0.99 |     0.60  |    0.70 |     0.74 |     0.65 |     0.42 |    17205
+
+
 #### SMOTE Oversampling
-#### Undersampling
-#### Combination Over/Under Sampling 
+Accuracy 67.3%
+
+Confusion Matrix
+![SMOTE](SMOTE_CM.png)
+
+Classification Report Imbalanced
+
+| |pre |  rec | spe |   f1  |  geo | iba | sup |
+|---|---|-----|-----|-------|------|-----|-----|
+|high_risk |      0.01 |  0.71 | 0.63 | 0.02 | 0.67 | 0.45  | 101
+|low_risk | 1.00 |  0.63 | 0.71 | 0.77  |    0.67 |     0.45 |    17104
+|
+|avg / total |      0.99 |     0.63  |    0.71 |     0.77  |    0.67 |     0.45  |   17205
+
+
+#### **Undersampling**
+Accuracy 53.8%
+
+Confusion Matrix
+![Undersampling](UndersamplingCM.png)
+
+Classification Report Imbalanced
+| |pre|       rec  | spe | f1 |   geo | iba  | sup |
+|---|---|----------|-----|----|-------|------|-----|
+|  high_risk  |     0.01  | 0.66 |  0.41 |  0.01  | 0.52 | 0.28 | 101|
+|low_risk| 1.00 |     0.41   |   0.66  |    0.58 |     0.52  |    0.27  |   17104 |
+|
+|avg | total  |     0.99  |    0.41  |    0.66  |    0.58    |  0.52   |   0.27  |   17205
+
+
+#### **Combination Over/Under Sampling**
+Accuracy 64.8%
+
+Confusion Matrix
+![Combination Over/Under Sampling](Combination_CM.png)
+
+| | pre |      rec |      spe  |      f1  |     geo |      iba  |     sup |
+|---|---|---|---|---|---|---|---|
+|high_risk |      0.01 |     0.71 |     0.58 |     0.02 |     0.64 |     0.42 |      101|
+|   low_risk |      1.00 |     0.58   |   0.71 |     0.74 |     0.64 |     0.41   |  17104
+|
+|avg / total |      0.99 |     0.58 |     0.71  |    0.73 |     0.64 |     0.41 |    17205 |
+
+
 ## **Summary**
+
+---
+[Environment Configuration Ensemble Notebook](environment.yml)<p>
+[Environment Configuration Resampling Notebook](resampling_env.yml)
