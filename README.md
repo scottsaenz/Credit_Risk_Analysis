@@ -2,9 +2,18 @@
 #### Author: Scott Saenz
 
 ## **Overview**
-Credit risk analysis is used to determine which loans are at high-risk of defaulting. This is important for financial institutions because they make money off of the interest for loans, but lose money when a loan defaults. Identifying loans that are high risk of defaulting enables a bank to reach out to those customers and see if there are steps that can be taken to keep the account current.
+Credit risk analysis is used to determine which loans are at high-risk of defaulting. This is important for financial institutions because they make money off of the interest for loans, but lose money when a loan defaults. Identifying loans that are high risk of defaulting enables a bank to reach out to those customers and see if there are steps that can be taken to keep the account current. This analysis can also be used to determine if a line of credit should be approved or not, mitigating the risk that a financial institution takes on.
 ## **Results**
 Two main types of analysis was conducted to determine if a loan is high risk or not, Ensemble Learners, which aggregate many small models to create a more significant model, and Resampling, which resamples the data so that the training set has about an equal chance of the different outcomes. This is used when there is a large difference between the two outcomes (high-risk and low-risk in this case).
+<p>
+Each model will have metrics that go along with it, accuracy, a confusion matrix, and classification report. Accuracy is the basic measurement of how many predictions were correct. With an imbalanced data set such, a dumb model could predict that every loan is low-risk. This would be a mistake as a true high-risk loan would result in greater financial ramifications than incorrectly labeling a low-risk loan. With that being said, models that have a low accuracy score are problematic because the end result would be incorrectly predicting both high-risk and low-risk loans.
+</p>
+<p>
+A confusion matrix will quickly show the number of true positive, false positive, true negative, and false negative results. Visualizing this a quick way for different models to stand out and was the cause for eliminating all of the random sampling models from consideration.
+</P>
+<p>
+A classification report is also included for each model. This provides more statistics that will help in evaluating models. This report includes precision, recall, specifity, f1, geometric mean, indexed balance accuracy, and support.
+
 ### **Ensemble Learners**
 #### **Balanced Random Forest Classifier**
 Accuracy of 72.5%
@@ -117,6 +126,9 @@ Confusion Matrix
 
 ## **Summary**
 All of the resampling methods performed poorly and would have marked too many loans as high risk. There is a balance that needs to be met in order for a financial institution to be viable, and these methods would result in a strategy that is too risk averse.
+<p>
+The recommendation is to utilize the Easy Ensemble AdaBoost Classifier model to identify high-risk loans. It had a high accuracy for identifying both the high-risk and low-risk loans.
+
 ---
 [Environment Configuration Ensemble Notebook](environment.yml)<p>
 [Environment Configuration Resampling Notebook](resampling_env.yml)
