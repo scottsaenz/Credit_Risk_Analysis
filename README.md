@@ -39,10 +39,19 @@ Most Signicant Features
 
 
 #### Easy Ensemble AdaBoost Classifier
-
+Accuracy of 93.2%
 
 Confusion Matrix
 ![Easy Ensemble Confusion Matrix](EasyEnsembleCM.png)
+
+Classification Report Imbalanced
+| | pre |      rec |      spe |       f1  |     geo | iba |      sup |
+|---|---|----------|----------|-----------|---------|-----|----------|
+|  high_risk |      0.09  |    0.92 |     0.94 |     0.16 |     0.93  |    0.87 |      101 |
+|   low_risk |      1.00 |     0.94 |     0.92 |     0.97 |     0.93  |    0.87 |     17104 |
+| 
+| avg / total |       0.99 |      0.94 |     0.92 |     0.97 |     0.93  |    0.87  |   17205
+
 ### Resampling
 #### Naive Random Oversampling
 #### SMOTE Oversampling
