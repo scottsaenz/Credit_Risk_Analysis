@@ -1,12 +1,12 @@
 # Credit Risk Analysis
-#### Scott Saenz
+#### Author: Scott Saenz
 
 ## **Overview**
 Credit risk analysis is used to determine which loans are at high-risk of defaulting. This is important for financial institutions because they make money off of the interest for loans, but lose money when a loan defaults. Identifying loans that are high risk of defaulting enables a bank to reach out to those customers and see if there are steps that can be taken to keep the account current.
 ## **Results**
 Two main types of analysis was conducted to determine if a loan is high risk or not, Ensemble Learners, which aggregate many small models to create a more significant model, and Resampling, which resamples the data so that the training set has about an equal chance of the different outcomes. This is used when there is a large difference between the two outcomes (high-risk and low-risk in this case).
-### Ensemble Learners
-#### Balanced Random Forest Classifier
+### **Ensemble Learners**
+#### **Balanced Random Forest Classifier**
 Accuracy of 72.5%
 
 Confusion Matrix
@@ -30,15 +30,17 @@ Classification Report Imbalanced
 | | | | | | | |
 | avg / total |       0.99  |    0.86 |     0.59 |     0.92 |     0.71 |     0.52 |    17205 |
 
-Most Signicant Features 
-(0.07593900705995023, 'total_rec_prncp'), 
-(0.06158702510225812, 'last_pymnt_amnt'), 
-(0.05971837741050125, 'total_pymnt_inv'),
-(0.05636801158522087, 'total_rec_int'),
-(0.053249264619626695, 'total_pymnt')
+Most Signicant Features
+| Significance | Feature |
+| --- | --- | 
+|0.076 | total_rec_prncp | 
+|0.062 | last_pymnt_amnt | 
+|0.060 | total_pymnt_inv |
+|0.056 | total_rec_int |
+|0.053 | total_pymnt |
 
 
-#### Easy Ensemble AdaBoost Classifier
+#### **Easy Ensemble AdaBoost Classifier**
 Accuracy of 93.2%
 
 Confusion Matrix
@@ -52,8 +54,8 @@ Classification Report Imbalanced
 |          | | | | | | | |
 | avg / total |       0.99 |      0.94 |     0.92 |     0.97 |     0.93  |    0.87  |   17205
 
-### Resampling
-#### Naive Random Oversampling
+### **Resampling**
+#### **Naive Random Oversampling**
 Accuracy 65.1%
 
 ![Naive Random](NaiveRandomCM.png)
@@ -68,7 +70,7 @@ Classification Report Imbalanced
 |avg / total |      0.99 |     0.60  |    0.70 |     0.74 |     0.65 |     0.42 |    17205
 
 
-#### SMOTE Oversampling
+#### **SMOTE Oversampling**
 Accuracy 67.3%
 
 Confusion Matrix
@@ -114,7 +116,7 @@ Confusion Matrix
 
 
 ## **Summary**
-
+All of the resampling methods performed poorly and would have marked too many loans as high risk. There is a balance that needs to be met in order for a financial institution to be viable, and these methods would result in a strategy that is too risk averse.
 ---
 [Environment Configuration Ensemble Notebook](environment.yml)<p>
 [Environment Configuration Resampling Notebook](resampling_env.yml)
